@@ -1,0 +1,36 @@
+@import-normalize;
+
+html {
+  box-sizing: border-box;
+  overflow-y: scroll;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  @include font-helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  color: $main-text-color;
+  margin: 0;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  box-shadow: 5px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+a {
+  color: $main-text-color;
+  outline: #fff;
+  text-decoration: none;
+}
+
+.title {
+  margin: 0;
+}
