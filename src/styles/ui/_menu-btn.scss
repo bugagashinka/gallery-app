@@ -1,0 +1,46 @@
+.app__menu-btn {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  z-index: 2;
+}
+
+.menu-btn {
+  display: none;
+  border-radius: 5px;
+  padding: 7px 5px;
+  cursor: pointer;
+
+  &__row1,
+  &__row2,
+  &__row3 {
+    float: left;
+    width: 100%;
+    height: 4px;
+    border-radius: 5px;
+    background-color: #000;
+    margin: 2px auto;
+    transition: transform 0.3s;
+  }
+
+  &_active {
+    .menu-btn__row1 {
+      transform: rotate(45deg) translate(6px, 5px);
+    }
+    .menu-btn__row3 {
+      transform: rotate(-45deg) translate(6px, -5px);
+    }
+    .menu-btn__row2 {
+      opacity: 0;
+    }
+  }
+}
+@media screen and (max-width: 992px) {
+  .menu-btn {
+    display: block;
+    visibility: visible;
+  }
+}

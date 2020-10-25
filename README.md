@@ -2,9 +2,31 @@
 
 Local images gallery application.
 
-### Technologies used:
+##### Technologies used:
 
 HTML, SASS, ReactJS, Redux, Thunk, IndexedDB;
+
+Development time ~ 30 hours
+
+### Tasks:
+
+##### Main task
+
+- [x] Upload / Download / Delete / Edit images
+- [x] Upload files with metadata
+
+##### Additional task #1
+
+- [x] Add collections
+- [x] Add tags for images
+- [x] Remove collection (with || without) images
+- [ ] Download collection archive
+
+##### Additional task #2
+
+- [x] Storage statistic
+- [x] Clear storage (images)
+- [x] Search by image name
 
 ### Available Scripts
 

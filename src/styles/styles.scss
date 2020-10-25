@@ -3,5 +3,16 @@
 @import "./settings/vars";
 @import "./settings/mixins";
 @import "./global/base";
+@import "./global/controls";
 
 // Components styles
+@import "./ui/app";
+@import "./ui/menu-btn";
+@import "./ui/panel";
+@import "./ui/filter";
+@import "./ui/main-content";
+@import "./ui/thumb";
+@import "./ui/modal-window";
+@import "./ui/modal-form";
+@import "./ui/modal-error";
+@import "./ui/modal-confirm";

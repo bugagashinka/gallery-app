@@ -1,0 +1,52 @@
+.input {
+  outline: none;
+}
+.button {
+  display: inline-block;
+
+  font-size: 15px;
+  outline: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  background-color: transparent;
+  opacity: 0.75;
+  transition: opacity 0.2s;
+  border-radius: 10px;
+
+  &:focus {
+    border-color: #fff;
+  }
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.cancel-btn,
+.ok-btn {
+  width: 140px;
+  padding: 8px 12px;
+  color: #fff;
+  text-transform: capitalize;
+
+  &:active,
+  &:hover {
+    border-color: $main-text-color;
+  }
+}
+
+.cancel-btn {
+  background-color: #ff0000;
+}
+.ok-btn {
+  background-color: #87d772;
+}
+
+.circle-btn {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  @include background-image;
+}
+.circle-btn + .circle-btn {
+  margin-left: 5px;
+}

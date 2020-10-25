@@ -1,0 +1,39 @@
+.upload-form {
+  text-align: left;
+
+  select,
+  input,
+  textarea {
+    display: inline-block;
+    width: 100%;
+    padding: 8px 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.upload-form__file {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+
+  input {
+    border: none;
+    padding: 0;
+    width: auto;
+  }
+}
+.upload-form__new-tag {
+  display: flex;
+  align-items: center;
+}
+.upload-form__description textarea {
+  resize: none;
+}

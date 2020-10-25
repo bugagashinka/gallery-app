@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1e3" height="1e3" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <metadata>Svg Vector Icons : http://www.onlinewebfonts.com/icon
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g>
+  <title>background</title>
+  <rect id="canvas_background" x="-1" y="-1" width="1925.1" height="1925.1" fill="none"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g stroke="null">
+   <g transform="translate(0 511) scale(.1 -.1)" fill="#fff" stroke="null">
+    <path d="m8226.9 4669.8c-69.545-30.4-273.81-204.26-451.83-386.66l-325.86-330.44 1651.2-1651.2 360.63 360.63c321.49 330.23 356.26 382.5 356.26 530.12 0 156.37-39.145 208.63-656.1 829.96-360.63 365.01-690.87 669.21-734.39 682.12-39.145 8.7452-130.34-4.1644-199.89-34.564z"/>
+    <path d="m4046.7 598.26-3146-3089.5 816.84-816.84 812.47-812.68 3124.5 3063.5c1716.3 1681.6 3128.5 3076.4 3137.2 3093.9 13.118 21.655-1581.6 1672.8-1599.1 1651.2-4.3726-0.20822-1416.5-1390.7-3146-3089.5z"/>
+    <path d="m631.53-2786.7c-52.055-147.84-499.72-1925-490.98-1938.1 17.49-13.118 2077 369.38 2098.8 391.03 8.7452 4.3726-347.52 373.75-786.44 812.68-530.33 530.12-808.51 777.9-821.42 734.39z"/>
+   </g>
+  </g>
+ </g>
+</svg>

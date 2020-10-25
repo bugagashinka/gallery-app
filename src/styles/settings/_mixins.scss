@@ -43,3 +43,39 @@
     display: table;
   }
 }
+
+@mixin scrollbar {
+  // Firefox scrollbar styles
+  scrollbar-color: transparent transparent;
+  scrollbar-width: thin;
+  &:hover {
+    scrollbar-color: $scroll-thumb-color $scroll-track-color;
+  }
+
+  // Webkit scrollbar styles
+  &::-webkit-scrollbar {
+    width: 5px;
+    visibility: hidden;
+  }
+
+  &:hover {
+    &::-webkit-scrollbar {
+      display: block;
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $scroll-track-color;
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $scroll-thumb-color;
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: rgba($main-text-color, 0.6);
+    }
+  }
+}

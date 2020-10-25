@@ -1,0 +1,54 @@
+// Content component style
+.content {
+  flex-grow: 1;
+  padding: 0 15px 0 30px;
+  overflow-y: scroll;
+  margin-top: 30px;
+  background: $content-background;
+  @include scrollbar;
+}
+@media screen and (max-width: 992px) {
+  .content {
+    &::-webkit-scrollbar,
+    &:hover::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.collection {
+  margin-bottom: 50px;
+  &__header {
+    margin-bottom: 25px;
+  }
+  &-title {
+    display: inline-block;
+    margin-right: 22px;
+    color: $collection-title-color;
+    font-size: 22px;
+  }
+  &__list {
+    @include reset-list;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -#{$thumb-margin};
+  }
+}
+
+.collection-caption__label {
+  font-weight: 600;
+}
+
+@media screen and (max-width: 600px) {
+  .collection {
+    margin-bottom: initial;
+
+    &-title {
+      display: block;
+      margin-bottom: initial;
+    }
+    &__header {
+      margin-bottom: 16px;
+    }
+  }
+}

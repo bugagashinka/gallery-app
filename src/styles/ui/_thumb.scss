@@ -1,0 +1,113 @@
+.collection__thumb {
+  width: initial;
+  margin: 0 $thumb-margin 40px;
+}
+.collection__thumb-content {
+  position: relative;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: all 0.5s;
+  overflow: hidden;
+}
+.collection__thumb-img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+.collection__thumb-more {
+  position: absolute;
+  width: 100%;
+  max-height: 0;
+  height: 0;
+  opacity: 0;
+  height: 0;
+  bottom: 0;
+  transition: all 0.3s;
+  background: rgba(#000, 0.5);
+}
+
+.collection__thumb-title {
+  color: #fff;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.collection__thumb-content:hover {
+  .collection__thumb-more {
+    opacity: 1;
+    max-height: 200px;
+    height: 100%;
+    @include background-image;
+    background-image: url(../../assets/icon/look-up.svg);
+    background-size: 20%;
+  }
+}
+
+.collection__thumb-controls {
+  position: absolute;
+  top: 0;
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  justify-content: flex-end;
+}
+.thumb__delete-btn,
+.thumb__edit-btn {
+  width: 30px;
+  height: 30px;
+  @include background-image;
+  border-color: transparent;
+}
+
+.thumb__delete-btn {
+  margin-right: 15px;
+  background-image: url(../../assets/icon/remove-icon-2.svg);
+}
+.thumb__edit-btn {
+  background-image: url(../../assets/icon/edit-icon.svg);
+}
+
+.collection__thumb-link:focus,
+.collection__thumb-link:active {
+  .collection__thumb-content {
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .collection__thumb {
+    width: calc(100% / 4 - 2 * #{$thumb-margin});
+  }
+}
+@media screen and (max-width: 992px) {
+  .collection__thumb {
+    width: calc(100% / 3 - 2 * #{$thumb-margin});
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .collection__thumb {
+    width: calc(100% / 2 - 2 * #{$thumb-margin});
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .collection__thumb-content {
+    width: initial;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .collection__thumb {
+    width: 100%;
+  }
+
+  .collection__thumb-content {
+    width: 100%;
+    height: auto;
+  }
+}

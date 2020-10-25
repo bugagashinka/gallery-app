@@ -1,0 +1,47 @@
+.modal-window {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+
+  &__close-btn {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 50px 20px 20px;
+    font-size: 16px;
+    margin: auto;
+    text-align: center;
+    line-height: 100%;
+    background-color: #fff;
+    box-shadow: 0 5px 17px rgba(0, 0, 0, 0.2);
+  }
+}
+.close-btn {
+  width: 16px;
+  height: 16px;
+  @include background-image;
+  background-image: url("../../assets/icon/close-icon.svg");
+
+  &:hover {
+    opacity: 1;
+    background-image: url(../../assets/icon/close-active-icon.svg);
+  }
+}
+
+@media (max-width: 600px) {
+  .modal-window__content {
+    max-width: 400px;
+    width: 95%;
+  }
+}

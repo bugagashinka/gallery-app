@@ -1,0 +1,141 @@
+// Filter section
+.search {
+  margin-bottom: 35px;
+  padding: 16px 0;
+  border-style: solid;
+  border-width: 1px 0;
+  color: $collection-title-color;
+  $panel-background: #1e1d26;
+
+  &-form__input {
+    color: #747474;
+    padding: 6px 12px;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+    background: none;
+    caret-color: #fff;
+  }
+}
+
+.collections__add-btn {
+  position: absolute;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+  @include background-image;
+  background-image: url(../../assets/icon/add-icon.svg);
+  border-color: transparent;
+}
+
+// Panel categories styles
+.collections__header {
+  position: relative;
+}
+.filter {
+  &__item {
+    margin-bottom: 40px;
+  }
+
+  &__list {
+    @include reset-list;
+  }
+  &__list-link {
+    display: block;
+    padding: 10px 5px 10px 35px;
+    border-left: 3px solid transparent;
+
+    &.active,
+    &:focus,
+    &:active {
+      border-left-color: #ea5a5a;
+      background-color: #19181e;
+      color: #fff;
+    }
+  }
+}
+.collections-names__item {
+  position: relative;
+}
+.collections-input {
+  width: 100%;
+  appearance: none;
+  outline: none;
+  border: 1px solid transparent;
+}
+.collections-names__input {
+  padding-right: 45px;
+  padding-left: 10px;
+  margin-bottom: 25px;
+}
+.collections-names__create {
+  position: relative;
+  visibility: hidden;
+  overflow: hidden;
+
+  height: 0;
+  transition: all 0.3s;
+
+  &_visible {
+    visibility: visible;
+    height: 61px;
+  }
+  .active {
+    border: none;
+  }
+}
+.collections-names__controls {
+  position: absolute;
+  line-height: 36px;
+  top: 0;
+  right: 0;
+}
+.collections__edit-btn,
+.collections__remove-btn,
+.collections__accept-btn,
+.collections__cancel-btn {
+  width: 18px;
+  height: 18px;
+  margin-right: 5px;
+  @include background-image;
+  border: 1px solid transparent;
+}
+.collections__accept-btn {
+  background-image: url(../../assets/icon/ok-icon.svg);
+}
+.collections__cancel-btn {
+  background-image: url(../../assets/icon/cancel-icon.svg);
+}
+.collections__remove-btn {
+  background-image: url(../../assets/icon/remove-icon.svg);
+}
+
+@media screen and (max-width: 600px) {
+  .collections-names__input {
+    padding-right: 82px;
+  }
+  .collections-names__controls {
+    top: 4px;
+  }
+  .collections__accept-btn,
+  .collections__remove-btn,
+  .collections__cancel-btn {
+    width: 22px;
+    height: 22px;
+    margin-right: 15px;
+  }
+}
+
+.collections__edit-btn {
+  position: absolute;
+  right: 6px;
+  top: 10px;
+  visibility: hidden;
+  background-image: url(../../assets/icon/edit-icon.svg);
+}
+.collections-names__item:nth-child(n + 4) {
+  .active + .collections__edit-btn {
+    visibility: visible;
+  }
+}
