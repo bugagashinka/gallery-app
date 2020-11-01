@@ -5,9 +5,6 @@ import store from "store";
 import "lightgallery.js/dist/css/lightgallery.css";
 import "styles/styles.scss";
 import App from "containers/App";
-import db from "./db";
-
-window.db = db;
 
 ReactDOM.render(
   <Provider store={store}>

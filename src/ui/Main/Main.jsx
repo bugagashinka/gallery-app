@@ -45,13 +45,13 @@ const Main = ({ currentColl = "", images = [], query = "", updateFileData, remov
           <span className="collection-caption__label">File size:</span> {size.toFixed(2)} MB
         </p>
         <p>
-          <span className="collection-caption__label">Dimensions:</span> {`${width}x${height}px`}
+          <span className="collection-caption__label">Dimensions:</span> {`${width}x${height}`}
         </p>
         <p>
           <span className="collection-caption__label">Type:</span> {type}
         </p>
         <p>
-          <span className="collection-caption__label">Tags:</span> {tags}
+          <span className="collection-caption__label">Tags:</span> {tags.join(",")}
         </p>
         <p>
           <span className="collection-caption__label" style={{ display: "block" }}>
