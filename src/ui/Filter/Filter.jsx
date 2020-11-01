@@ -115,7 +115,7 @@ const Filter = (props) => {
       <article className="collections filter__item">
         <section className="collections__header">
           <h3 className="title panel-title">Collections</h3>
-          <button className="button collections__add-btn" onClick={addHandler}></button>
+          <button title="Add collection" className="button collections__add-btn" onClick={addHandler}></button>
         </section>
         <ul className="collections-names filter__list">
           <li
@@ -130,10 +130,25 @@ const Filter = (props) => {
               className="collections-input collections-names__input filter__list-link active"
             ></input>
             <div className="collections-names__controls">
-              <button className="button collections__accept-btn" onClick={acceptHandler} type="button"></button>
-              <button className="button collections__cancel-btn" onClick={cancelHandler} type="button"></button>
+              <button
+                title="Accept"
+                className="button collections__accept-btn"
+                onClick={acceptHandler}
+                type="button"
+              ></button>
+              <button
+                title="Cancel"
+                className="button collections__cancel-btn"
+                onClick={cancelHandler}
+                type="button"
+              ></button>
               {inputModeState.mode === inputModeEnum.EDIT_MODE && (
-                <button className="button collections__remove-btn" onClick={removeHandler} type="button"></button>
+                <button
+                  title="Remove"
+                  className="button collections__remove-btn"
+                  onClick={removeHandler}
+                  type="button"
+                ></button>
               )}
             </div>
           </li>
