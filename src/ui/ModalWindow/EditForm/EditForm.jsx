@@ -88,6 +88,7 @@ const EditForm = ({
   };
 
   const addNewTagHandler = () => {
+    if (newTag === "" || newTag === "#") return;
     addNewTag(newTag);
   };
 
