@@ -22,12 +22,8 @@ function App({ showModalType, hideModalWindow, removeCollection, currentColl, cl
     }
   }, [showModalType]);
 
-  const deleteCollectionHandler = () => {
-    removeCollection(currentColl);
-    closeModalWindow();
-  };
-  const fullCollectionDeleteHandler = () => {
-    removeCollection(currentColl, true);
+  const deleteCollectionHandler = (deleteWithFiles = false) => () => {
+    removeCollection(currentColl, deleteWithFiles);
     closeModalWindow();
   };
 
@@ -56,8 +52,9 @@ function App({ showModalType, hideModalWindow, removeCollection, currentColl, cl
   const deleteCollectionDialog = showModalType === modalWindowTypes.DELETE_COLLECTION_DIALOG && (
     <ConfirmDialog
       cancelHandler={closeModalWindow}
-      onDelete={deleteCollectionHandler}
-      onFullDelete={fullCollectionDeleteHandler}
+      onDelete={deleteCollectionHandler()}
+      onFullDelete={deleteCollectionHandler(true)}
+      extraQuestion={true}
     >
       <p>Do you really want to delete collection?</p>
     </ConfirmDialog>
