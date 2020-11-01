@@ -3,7 +3,7 @@ import classNames from "classnames";
 import Filter from "containers/Filter";
 import Stats from "containers/Stats";
 
-const Panel = ({ collections, currentColl, uploadFile, showCreateFormDialog }) => {
+const Panel = ({ showCreateFormDialog }) => {
   const uploadClickHandler = (e) => {
     showCreateFormDialog();
   };

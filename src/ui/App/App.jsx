@@ -8,7 +8,15 @@ import ErrorDialog from "containers/ErrorDialog";
 import ConfirmDialog from "ui/ModalWindow/ConfirmDialog";
 import { modalWindowTypes, inputModeEnum } from "constants.js";
 
-function App({ showModalType, hideModalWindow, removeCollection, currentColl, clearStorage }) {
+function App({
+  showModalType,
+  hideModalWindow,
+  removeCollection,
+  switchCollection,
+  removeActiveFile,
+  currentColl,
+  clearStorage,
+}) {
   const [showModal, toggleModal] = useState(false);
 
   const closeModalWindow = () => {
@@ -27,6 +35,12 @@ function App({ showModalType, hideModalWindow, removeCollection, currentColl, cl
     closeModalWindow();
   };
 
+  const deleteFileHandler = () => {
+    removeActiveFile();
+    switchCollection(currentColl);
+    closeModalWindow();
+  };
+
   const clearStorageHandler = () => {
     clearStorage();
     closeModalWindow();
@@ -41,7 +55,13 @@ function App({ showModalType, hideModalWindow, removeCollection, currentColl, cl
   })();
 
   const errorDialog = showModalType === modalWindowTypes.INFO_DIALOG && <ErrorDialog onClose={closeModalWindow} />;
-  const deleteFileDialog = showModalType === modalWindowTypes.DELETE_FILE_DIALOG && null;
+  const deleteFileDialog = showModalType === modalWindowTypes.DELETE_FILE_DIALOG && (
+    <ConfirmDialog cancelHandler={closeModalWindow} onDelete={deleteFileHandler}>
+      <p>
+        Do you really want to delete <strong>current file</strong>?
+      </p>
+    </ConfirmDialog>
+  );
   const clearStorageDialog = showModalType === modalWindowTypes.CLEAR_STORAGE_DIALOG && (
     <ConfirmDialog cancelHandler={closeModalWindow} onDelete={clearStorageHandler}>
       <p>

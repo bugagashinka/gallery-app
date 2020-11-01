@@ -1,8 +1,17 @@
 import { connect } from "react-redux";
 import App from "ui/App";
 import { hideModalWindow } from "actions";
-import { removeCollection, clearStorage } from "thunk";
+import { removeCollection, switchCollection, clearStorage, removeActiveFile } from "thunk";
 
-const mapStateToProps = ({ currentColl, showModalType }) => ({ currentColl, showModalType });
+const mapStateToProps = ({ currentColl, showModalType }) => ({
+  currentColl,
+  showModalType,
+});
 
-export default connect(mapStateToProps, { hideModalWindow, removeCollection, clearStorage })(App);
+export default connect(mapStateToProps, {
+  hideModalWindow,
+  removeCollection,
+  switchCollection,
+  removeActiveFile,
+  clearStorage,
+})(App);

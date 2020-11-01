@@ -53,9 +53,7 @@ const removeCollection = (title, withContent = false) => async (dispatch) => {
   dispatch(getCollections());
 };
 
-const removeFile = (description) => async (dispatch) => {
-  db.removeFile(description.id);
-};
+const removeActiveFile = () => async (dispatch, getState) => db.removeFile(getState().activeFile.id);
 
 const getCollections = (activeCollection) => async (dispatch) => {
   const collections = await db.getCollections();
@@ -108,5 +106,5 @@ export {
   removeCollection,
   search,
   updateFileData,
-  removeFile,
+  removeActiveFile,
 };

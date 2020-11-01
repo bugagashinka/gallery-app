@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Thumb from "ui/Thumb";
 import { LightgalleryProvider } from "react-lightgallery";
 
-const Main = ({ currentColl = "", images = [], query = "", updateFileData, removeFile, switchCollection }) => {
+const Main = ({ currentColl = "", images = [], query = "", updateFileData, showFileConfirmDialog, selectFile }) => {
   const [isCaptionVisible, toggleCaption] = useState(false);
   const [currentSlideDescriptor, setSlideDescriptor] = useState(null);
 
@@ -12,8 +12,8 @@ const Main = ({ currentColl = "", images = [], query = "", updateFileData, remov
   };
 
   const onDeleteHandler = (descriptor) => (e) => {
-    removeFile(descriptor);
-    switchCollection(currentColl);
+    selectFile(descriptor);
+    showFileConfirmDialog();
     e.stopPropagation();
   };
 

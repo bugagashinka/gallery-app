@@ -40,6 +40,11 @@ const hideModalWindow = () => ({ type: SHOW_MODAL_WINDOW, value: null });
 
 const showCreateFormDialog = () => ({ type: SHOW_MODAL_WINDOW, value: modalWindowTypes.CREATE_FORM_DIALOG });
 
+const showFileConfirmDialog = () => ({
+  type: SHOW_MODAL_WINDOW,
+  value: modalWindowTypes.DELETE_FILE_DIALOG,
+});
+
 const showCollectionConfirmDialog = () => ({
   type: SHOW_MODAL_WINDOW,
   value: modalWindowTypes.DELETE_COLLECTION_DIALOG,
@@ -62,5 +67,6 @@ export {
   showCreateFormDialog,
   showCollectionConfirmDialog,
   showStorageConfirmDialog,
+  showFileConfirmDialog,
   hideModalWindow,
 };
