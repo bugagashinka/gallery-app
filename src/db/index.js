@@ -65,9 +65,7 @@ const renameCollection = async (newTitle, currentTitle) => {
   });
 };
 
-const downloadImageCollection = async (collectionTitle) => {
-  const blobFiles = await getImagesCollection(collectionTitle);
-};
+const downloadImagesCollection = async (collectionTitle) => await getImagesCollection(collectionTitle);
 
 const getImagesCollection = (collectionTitle = DEFAULT_COLLECTION_NAME1) => {
   if (collectionTitle === DEFAULT_COLLECTION_NAME2) {
@@ -172,7 +170,7 @@ export default {
   clearStorage,
   renameCollection,
   getStats,
-  downloadImageCollection,
+  downloadImagesCollection,
   search,
   removeFile,
 };

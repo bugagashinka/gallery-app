@@ -1,3 +1,4 @@
+import { collectionDescriptorsToZip } from "utils/convertors";
 import {
   initCollections,
   initTags,
@@ -94,6 +95,11 @@ const updateFileData = (fileDescriptor) => (dispatch) => {
   dispatch(selectFile({ ...fileDescriptor, file: null }));
 };
 
+const downloadCollectionArchive = () => async (dispatch, getState) => {
+  const descriptorList = await db.downloadImagesCollection();
+  collectionDescriptorsToZip(getState().currentColl, descriptorList);
+};
+
 export {
   getCollections,
   getTags,
@@ -107,4 +113,5 @@ export {
   search,
   updateFileData,
   removeActiveFile,
+  downloadCollectionArchive,
 };

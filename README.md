@@ -20,7 +20,7 @@ Development time ~ 30 hours
 - [x] Add collections
 - [x] Add tags for images
 - [x] Remove collection (with || without) images
-- [ ] Download collection archive
+- [x] Download collection archive
 
 ##### Additional task #2
 

@@ -7,18 +7,12 @@
   background: $content-background;
   @include scrollbar;
 }
-@media screen and (max-width: 992px) {
-  .content {
-    &::-webkit-scrollbar,
-    &:hover::-webkit-scrollbar {
-      display: none;
-    }
-  }
-}
 
 .collection {
   margin-bottom: 50px;
   &__header {
+    display: flex;
+    align-items: baseline;
     margin-bottom: 25px;
   }
   &-title {
@@ -26,6 +20,9 @@
     margin-right: 22px;
     color: $collection-title-color;
     font-size: 22px;
+  }
+  &__stats {
+    align-self: center;
   }
   &__list {
     @include reset-list;
@@ -35,8 +32,32 @@
   }
 }
 
+@media screen and (max-width: 992px) {
+  .content {
+    &::-webkit-scrollbar,
+    &:hover::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  .collection__header {
+    margin-top: 3em;
+  }
+}
+
 .collection-caption__label {
   font-weight: 600;
+}
+
+.collection-download__btn {
+  margin-left: auto;
+  margin-right: 3px;
+}
+.collection-download__icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  @include background-image;
+  background-image: url(../../assets/icon/download-icon.svg);
 }
 
 @media screen and (max-width: 600px) {

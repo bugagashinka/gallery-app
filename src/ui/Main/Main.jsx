@@ -2,7 +2,15 @@ import React, { useState } from "react";
 import Thumb from "ui/Thumb";
 import { LightgalleryProvider } from "react-lightgallery";
 
-const Main = ({ currentColl = "", images = [], query = "", updateFileData, showFileConfirmDialog, selectFile }) => {
+const Main = ({
+  currentColl = "",
+  images = [],
+  query = "",
+  updateFileData,
+  showFileConfirmDialog,
+  selectFile,
+  downloadCollectionArchive,
+}) => {
   const [isCaptionVisible, toggleCaption] = useState(false);
   const [currentSlideDescriptor, setSlideDescriptor] = useState(null);
 
@@ -16,6 +24,8 @@ const Main = ({ currentColl = "", images = [], query = "", updateFileData, showF
     showFileConfirmDialog();
     e.stopPropagation();
   };
+
+  const OnDownloadHandler = () => downloadCollectionArchive();
 
   const thumbElements = images.map(({ file, title }, idx) => {
     const fileDescriptor = images[idx];
@@ -85,6 +95,9 @@ const Main = ({ currentColl = "", images = [], query = "", updateFileData, showF
           <header className="collection__header">
             <h3 className="title collection-title">{collectionTitle}</h3>
             <span className="collection__stats">{`(${images.length} images)`}</span>
+            <button className="button collection-download__btn" onClick={OnDownloadHandler}>
+              <span className="collection-download__icon">s</span>
+            </button>
           </header>
           <ul className="collection__list">{thumbElements}</ul>
           {showCaptionElement()}
