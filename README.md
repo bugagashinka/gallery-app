@@ -1,6 +1,6 @@
 ### About:
 
-Local images gallery application.
+Local images gallery application - [demo](https://bugagashinka.github.io/gallery-app/).
 
 ##### Technologies used:
 
