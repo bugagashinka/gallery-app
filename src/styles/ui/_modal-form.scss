@@ -30,10 +30,26 @@
     width: auto;
   }
 }
+.upload-form__tag-list {
+  @include scrollbar;
+}
+
 .upload-form__new-tag {
   display: flex;
   align-items: center;
 }
 .upload-form__description textarea {
   resize: none;
+}
+.upload__add-btn {
+  background: #87d772;
+  margin-left: 10px;
+  height: 100%;
+  padding: 8px 10px;
+  color: #fff;
+
+  &:active,
+  &:hover {
+    border-color: $main-text-color;
+  }
 }

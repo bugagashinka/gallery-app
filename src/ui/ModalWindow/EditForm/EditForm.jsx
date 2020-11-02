@@ -116,9 +116,11 @@ const EditForm = ({
         <label htmlFor="file-tags">Tags:</label>
         <div className="upload-form__new-tag">
           <input value={newTag} type="text" onChange={updateTagInput}></input>
-          <button onClick={addNewTagHandler}>Add</button>
+          <button className="button upload__add-btn" onClick={addNewTagHandler}>
+            Add
+          </button>
         </div>
-        <select id="file-tags" size={3} onChange={changeTags} multiple>
+        <select className="upload-form__tag-list" id="file-tags" size={3} onChange={changeTags} multiple>
           {tagOptions}
         </select>
       </div>
