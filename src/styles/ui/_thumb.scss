@@ -11,6 +11,7 @@
 }
 .collection__thumb-img {
   @include responsive-img;
+  height: 180px;
   border-radius: 5px;
 }
 
