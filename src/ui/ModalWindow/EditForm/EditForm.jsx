@@ -28,6 +28,7 @@ const EditForm = ({
       : activeFile
   );
   const [newTag, setNewTag] = useState("");
+  const [showFileError, toggleFileError] = useState(false);
 
   useEffect(() => {
     getTags();
@@ -66,6 +67,7 @@ const EditForm = ({
   const uploadFileHandler = ({ target }) => {
     const [file] = Object.values(target.files);
     updateDescriptor((descriptor) => ({ ...descriptor, title: file.name, file, type: file.type, size: file.size }));
+    toggleFileError(false);
   };
 
   const fileNameChange = ({ target }) => updateDescriptor((descriptor) => ({ ...descriptor, title: target.value }));
@@ -75,6 +77,9 @@ const EditForm = ({
     if (title && file) {
       uploadFile(fileDescriptor);
       closeHandler();
+      toggleFileError(false);
+    } else {
+      toggleFileError(true);
     }
   };
 
@@ -99,6 +104,7 @@ const EditForm = ({
           Upload a file:
         </label>
         <input id="upload-btn" onChange={uploadFileHandler} type="file" accept={acceptFileType.images} />
+        {showFileError ? <span className="upload-form__file-error">Please select file to upload</span> : null}
       </div>
       <div className="upload-form__row upload-form__name">
         <label className="upload-form__label" htmlFor="file-name">
